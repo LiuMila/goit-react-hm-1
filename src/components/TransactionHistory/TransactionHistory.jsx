@@ -3,14 +3,15 @@ import { TransactionElement } from './TransactionElement'
 import { TableTransaction, TitleTable } from './TransactionHistory.styled'
 
 export const TransactionHistory = ({ items }) => {
-    return <TableTransaction>
+  return <TableTransaction>
   <thead>
     <tr>
       <TitleTable>Type</TitleTable>
       <TitleTable>Amount</TitleTable>
       <TitleTable>Currency</TitleTable>
     </tr>
-  </thead>
+      </thead>
+      <tbody>
         {items.map(({ id, type, amount, currency }) => {
             return <TransactionElement
                 key={id}
@@ -18,7 +19,8 @@ export const TransactionHistory = ({ items }) => {
                 amount={amount}
                 currency={currency}
             ></TransactionElement>
-    })}
+        })}
+      </tbody>
 </TableTransaction>
 }
 
